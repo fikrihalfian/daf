@@ -1,0 +1,249 @@
+/*utility*/
+@font-face {
+    font-family: 'BeVietnamPro-Medium';
+    src: url('BeVietnamPro-Medium.woff');
+}
+html{
+    list-style: none;
+    font-family: 'BeVietnamPro-Medium';
+    text-align: center;
+    background: darkslateblue;
+    font-size: 9px
+}
+body{
+    margin: 3.8rem .5rem
+}
+input,button{
+    border: none;
+    outline: none;
+}
+.btn{
+    cursor: pointer;
+    user-select: none;
+}
+
+/*non-utility*/
+.brand-header{
+    color: white;
+    font-size: 2.6rem
+}
+.menu-setting > i {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: white;
+    font-size: 2rem;
+}
+.input-container {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
+    background: rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-box {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: white;
+    padding-top: calc(4vw + 8vh);
+    padding-bottom: calc(3vw + 6vh);
+    padding-left: calc(4vw + 8vh);
+    padding-right: calc(4vw + 8vh);
+    border-radius: 2px;
+    max-width: 92vw;
+    width: 46rem;
+}
+.input-box .input-item {
+    border: 1px solid rgba(0,0,0,.1);
+    font-size: 1.7rem;
+    padding: 1rem;
+    border-radius: 2px;
+    font-family: 'BeVietnamPro-Medium';
+}
+.input-item.invalid{
+    border: 1px solid red
+}
+.input-box .btn-add {
+    background: white;
+    box-shadow: -3px 3px 1px gray;
+    font-size: 1.6rem;
+    padding: .7rem;
+    border-radius: 2px;
+    color: grey
+}
+.input-box .btn-add:active {
+    box-shadow: -1px 1px 1px gray;
+}
+.btn-close {
+    color: white;
+    position: absolute;
+    background: red;
+    top: -1rem;
+    right: -1rem;
+    font-size: 2.5rem;
+    border-radius: 50%
+}
+.add-item i {
+    display: inline-block;
+    color: white;
+    transition: 250ms;
+    transform: scale(1);
+    font-size: 2.4rem;
+}
+.add-item i:active {
+    transform: scale(.9);
+}
+.container-list-item-up {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem
+}
+.sorted-list{
+    background: rgb(255, 78, 78);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .3rem .7rem
+}
+.container-select-sorted{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0,0,0,.35);
+}
+.child-container-select-sorted{
+    position: fixed;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    background: white;
+    color: rgba(0,0,0,.86);
+    padding: 3.9rem 0;
+    font-size: 2rem;
+    border-radius: 1.8rem 1.8rem 0 0;
+    width: 97vw;
+    max-width: 65rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.child-container-select-sorted > li{
+    font-size: 1.8rem;
+    width: 88%;
+    padding: 1.3rem
+}
+.child-container-select-sorted > li:active{
+    background: rgba(0,0,0,.1);
+}
+.total-items.down {
+    font-size: 1.15rem
+}
+.total-items.up {
+    display: inline-block;
+}
+.total-items {
+    color: white;
+    text-align: center;
+}
+.list-item-box{
+    margin: 2.2rem auto;
+    width: 97%;
+    max-width: 77rem
+}
+.list-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    margin: .7rem 0;
+}
+.list-items .item {
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: white;
+    width: 100%;
+    padding: .8rem;
+    gap: .8rem;
+    border-radius: 1px;
+    overflow: hidden;
+}
+.list-items .item.priority{
+	background: rgb(205,205,205);
+}
+.item .nameNprice-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: .45rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.nameNprice-container span {
+    text-align: left;
+    font-size: 1.7rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.nameNprice-container li {
+    font-style: italic;
+    display: none;
+    font-size: 1rem
+}
+.item:hover .nameNprice-container li {
+    display: flex;
+}
+.set-item {
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: .4rem;
+}
+.set-item i {
+    background-color: rgb(255, 78, 78);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    padding: .7rem;
+    border-radius: 2px
+}
+.set-item :nth-child(1) {
+    transition: .5s;
+    transform: translateX(224px);
+    opacity: 0;
+}
+li:hover .set-item :nth-child(1) {
+    transform: translateX(0);
+    opacity: 1;
+}
+.set-item :nth-child(2) {
+    transform: translateX(224px);
+    transition: .7s;
+    opacity: 0;
+}
+li:hover .set-item :nth-child(2) {
+    transform: translateX(0);
+    opacity: 1;
+}
+.set-item :nth-child(3) {
+    transform: translateX(224px);
+    transition: 1s;
+    opacity: 0;
+}
+li:hover .set-item :nth-child(3) {
+    transform: translateX(0);
+    opacity: 1;
+}
